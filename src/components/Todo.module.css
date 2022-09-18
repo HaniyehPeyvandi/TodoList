@@ -2,11 +2,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 20rem;
+  width: 25rem;
   margin: 1rem 0;
 }
 
 .completed{
   text-decoration: line-through;
   color: #ccc;
+}
+
+.btn{
+  color: #6d28d9;
+  background-color: #fff;
+  border: 1px solid #6d28d9;
+  border-radius: 5px;
+  outline: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.remove{
+  color: rgb(236,68,68);
+  border: 1px solid rgb(236,68,68);
+  margin-left: 0.5rem;
 }

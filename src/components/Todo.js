@@ -10,8 +10,8 @@ const Todo = ({ todo, onComplete, onDelete, onEdit }) => {
         {todo.text}
       </div>
       <div>
-        <button onClick={onEdit}>Edit</button>
-        <button onClick={onDelete}>Delete</button>
+        <button onClick={onEdit} className={styles.btn}>Edit</button>
+        <button onClick={onDelete} className={`${styles.btn} ${styles.remove}`}>Delete</button>
       </div>
     </div>
   );
