@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import styles from './TodoForm.module.css';
+import styles from "./TodoForm.module.css";
 
-const TodoForm = (props) => {
-  const [input, setInput] = useState(props.edit ? props.edit.text : "");
+const TodoForm = ({submitTodo,edit}) => {
+  const [input, setInput] = useState(edit ? edit.text : "");
   const inputRef = useRef();
 
   useEffect(() => {
     inputRef.current.focus();
-  },[]);
+  }, []);
 
   const changeHandler = (e) => {
     setInput(e.target.value);
@@ -21,21 +21,30 @@ const TodoForm = (props) => {
       return;
     }
 
-    props.submitTodo(input);
+    submitTodo(input);
     setInput("");
   };
 
   return (
     <form onSubmit={submitHandler}>
-      <input
-        type="text"
-        onChange={changeHandler}
-        value={input}
-        placeholder={props.edit ? "update todo..." : "add new todo..."}
-        ref={inputRef}
-        className={styles.input}
-      />
-      <button type="submit">{props.edit ? "Update" : "Add"}</button>
+      <div className={styles.formControl}>
+        <input
+          type="text"
+          onChange={changeHandler}
+          value={input}
+          placeholder={edit ? "update todo..." : "add new todo..."}
+          ref={inputRef}
+          className={styles.input}
+        />
+        <button
+          type="submit"
+          className={`${styles.btn} ${
+            edit ? styles.updateTodo : styles.addTodo
+          }`}
+        >
+          {edit ? "Update" : "Add"}
+        </button>
+      </div>
     </form>
   );
 };
