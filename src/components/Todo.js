@@ -1,6 +1,6 @@
 import styles from "./Todo.module.css";
 
-const Todo = ({ todo, onComplete, onDelete }) => {
+const Todo = ({ todo, onComplete, onDelete, onEdit }) => {
   return (
     <div className={styles.todo}>
       <div
@@ -10,7 +10,7 @@ const Todo = ({ todo, onComplete, onDelete }) => {
         {todo.text}
       </div>
       <div>
-        <button>Edit</button>
+        <button onClick={onEdit}>Edit</button>
         <button onClick={onDelete}>Delete</button>
       </div>
     </div>
