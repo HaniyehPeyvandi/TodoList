@@ -5,3 +5,8 @@
   width: 20rem;
   margin: 1rem 0;
 }
+
+.completed{
+  text-decoration: line-through;
+  color: #ccc;
+}
