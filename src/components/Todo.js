@@ -11,7 +11,7 @@ const Todo = ({ todo, onComplete, onDelete }) => {
       </div>
       <div>
         <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={onDelete}>Delete</button>
       </div>
     </div>
   );

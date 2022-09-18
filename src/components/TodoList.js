@@ -9,6 +9,7 @@ const TodoList = ({ todos, onComplete, onDelete }) => {
         key={todo.id}
         todo={todo}
         onComplete={() => onComplete(todo.id)}
+        onDelete={() => onDelete(todo.id)}
       />
     ));
   };
