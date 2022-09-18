@@ -1,15 +1,20 @@
-import styles from './Todo.module.css';
+import styles from "./Todo.module.css";
 
-const Todo = ({todo}) => {
-  return ( 
+const Todo = ({ todo, onComplete, onDelete }) => {
+  return (
     <div className={styles.todo}>
-      <div>{todo.text}</div>
+      <div
+        onClick={onComplete}
+        className={`${todo.isCompleted && styles.completed}`}
+      >
+        {todo.text}
+      </div>
       <div>
         <button>Edit</button>
         <button>Delete</button>
       </div>
     </div>
-   );
-}
- 
+  );
+};
+
 export default Todo;

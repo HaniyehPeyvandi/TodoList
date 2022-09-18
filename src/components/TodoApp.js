@@ -10,15 +10,24 @@ const TodoApp = () => {
     const newTodo = {
       id: Math.floor(Math.random() *1000),
       text: input,
-      isCompeleted:false
+      isCompleted:false
     }
     setTodos([...todos,newTodo]);
+  }
+
+  const completeTodo = (id) => {
+    const index = todos.findIndex(t => t.id === id);
+    const selectedTodo = { ...todos[index] };
+    selectedTodo.isCompleted = !selectedTodo.isCompleted;
+    const updatedTodos = [...todos];
+    updatedTodos[index] = selectedTodo;
+    setTodos(updatedTodos);
   }
 
   return ( 
     <div className={styles.container}>
       <TodoForm addTodoHandler={addTodoHandler}/>
-      <TodoList todos={todos}/>
+      <TodoList todos={todos} onComplete={completeTodo}/>
     </div>
    );
 }
