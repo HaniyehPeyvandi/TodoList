@@ -7,11 +7,11 @@ import Navbar from "./Navbar";
 const TodoApp = () => {
   const [todos, setTodos] = useState([]);
   const [filteredTodos, setFilteredTodos] = useState([]);
-  const [status, setStatus] = useState("All");
+  const [selectedOption, setSelectedOption] = useState("All");
 
   useEffect(() => {
-    filterTodos(status);
-  }, [todos, status]);
+    filterTodos(selectedOption);
+  }, [todos, selectedOption]);
 
   const addTodo = (input) => {
     const newTodo = {
@@ -63,16 +63,16 @@ const TodoApp = () => {
   };
 
   const selectHandler = (e) => {
-    setStatus(e.target.value);
-    filterTodos(e.target.value);
+    setSelectedOption(e.value);
+    filterTodos(e.value);
   };
 
   return (
     <div className={styles.container}>
       <Navbar
         unCompletedTodos={todos.filter((t) => !t.isCompleted).length}
-        status={status}
-        onSelect={selectHandler}
+        selectedOption={selectedOption}
+        onChange={selectHandler}
       />
       <TodoForm submitTodo={addTodo} />
       <TodoList
