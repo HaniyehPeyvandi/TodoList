@@ -21,3 +21,12 @@
 .heading{
   margin-bottom: 1.5rem;
 }
+
+.select{
+  margin-left: 1rem;
+  width: 12rem;
+}
+
+.select  span{
+  display: none;
+}
