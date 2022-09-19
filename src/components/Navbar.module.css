@@ -30,3 +30,12 @@
 .select  span{
   display: none;
 }
+
+@media screen and (max-width:768px) {
+  .header h2, .heading{
+    font-size: 16px;
+  }
+  .select{
+    width: auto;
+  }
+}

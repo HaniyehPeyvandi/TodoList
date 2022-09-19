@@ -36,3 +36,12 @@
   background-color: #c29ffa;
   border: none;
 }
+
+@media screen and (max-width:768px) {
+  .input{
+    width: 10rem;
+  }
+  .formControl{
+    width: 15rem;
+  }
+}
